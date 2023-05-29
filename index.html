@@ -49,10 +49,12 @@
 </head>
 
 <body>
-  <video autoplay loop muted id="background-video">
+  <video loop muted id="background-video">
     <source src="images/back.mp4" type="video/mp4">
     <source src="images/back.webm" type="video/webm">
     <!-- Add more source tags for other video formats if desired -->
+    <img src="images/fallback-image.jpg" alt="Fallback Image"> <!-- Fallback image -->
+    <button id="play-video-btn">Play Video</button> <!-- Play button -->
   </video>
 
   <header>
@@ -100,6 +102,14 @@
   <script src="js/hippie.js"></script>
 
   <script>
+    const playVideoBtn = document.getElementById("play-video-btn");
+    const backgroundVideo = document.getElementById("background-video");
+
+    playVideoBtn.addEventListener("click", () => {
+      playVideoBtn.style.display = "none"; // Hide the play button
+      backgroundVideo.play(); // Start video playback
+    });
+
     const generateNumberBtn = document.getElementById("generate-number-btn");
     const randomNumberText = document.getElementById("random-number-text");
 
@@ -111,3 +121,4 @@
 </body>
 
 </html>
+
