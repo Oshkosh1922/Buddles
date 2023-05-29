@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buddles Lottery</title>
+  <!-- Add Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/1z7rJr59U7z8/7+ol7kzgO5k5ulTio2f3ax4Sf" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    #background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+
+    /* Custom styles for the Share on Twitter button */
+    #shareOnTwitterBtn {
+      background-color: rgb(47, 36, 243);
+      border: none;
+      border-radius: 5px;
+      color: rgb(105, 200, 235);
+      cursor: pointer;
+      display: inline-block;
+      font-size: 2rem;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    #shareOnTwitterBtn:hover {
+      background-color: dodgerblue;
+    }
+  </style>
+
+</head>
+
+<body>
+  <video autoplay loop muted id="background-video">
+    <source src="images/back.mp4" type="video/mp4">
+    <source src="images/back.webm" type="video/webm">
+    <!-- Add more source tags for other video formats if desired -->
+  </video>
+
+  <header>
+    <div id="confetti-container"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex align-items-center justify-content-center">
+            <h1 class="title floating">Buddles Lottery</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="d-flex align-items-center justify-content-center min-vh-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 d-flex align-items-center justify-content-center">
+          <img src="images/2.png" alt="Hippie" class="hippie-image walking">
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center flex-column">
+          <div id="random-number-container"></div>
+
+          <p id="random-number-text"></p>
+          <button id="generate-number-btn" class="btn btn-primary mb-3">Button of Fate</button>
+          <div id="tweetDialog" class="mt-2">
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Add Bootstrap JS and its dependencies -->
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/1z7rJr59U7z8/7+ol7kzgO5k5ulTio2f3ax4Sf" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz4fnFO9gybBud7M4/6Sh5X4va4kf2erV0sqGjK4tX8rX3f3yTpbJb6D6F" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+    crossorigin="anonymous"></script>
+  <script src="js/hippie.js"></script>
+
+  <script>
+    const generateNumberBtn = document.getElementById("generate-number-btn");
+    const randomNumberText = document.getElementById("random-number-text");
+
+    generateNumberBtn.addEventListener("click", () => {
+      const randomNum = Math.floor(Math.random() * 10000000) + 1;
+      randomNumberText.textContent = `Your random number is: ${randomNum}`;
+    });
+  </script>
+</body>
+
+</html>
