@@ -43,7 +43,7 @@ generateNumberBtn.addEventListener("click", () => {
   shareOnTwitterBtn.style.margin = "0 auto";
 
   shareOnTwitterBtn.addEventListener("click", () => {
-    const tweetText = encodeURIComponent(`Check out buddles available https://magiceden.io/marketplace/buddles --- Visit buddles on twitter https://twitter.com/Buddles_co --- #BuddlesLottery --- My Lottery Number: ${randomNum}`);
+    const tweetText = encodeURIComponent(`Check out buddles available https://magiceden.io/marketplace/buddles --- Visit buddles on twitter https://twitter.com/Buddles_co --- #BuddlesLottery --- My Lottery Number: ${randomNum} https://buddleslottery.site/`);
     const tweetURL = `https://twitter.com/intent/tweet?text=${tweetText}`;
     window.open(tweetURL, '_blank');
   });
