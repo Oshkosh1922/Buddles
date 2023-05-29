@@ -18,13 +18,31 @@
       margin: 0;
     }
 
-    #background-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
+    /* Mobile background image */
+    @media (max-width: 767px) {
+      #background-video {
+        display: none;
+      }
+      body {
+        background-image: url("images/fallback.jpeg");
+        background-size: cover;
+      }
+    }
+
+    /* Desktop video background */
+    @media (min-width: 768px) {
+      body {
+        overflow: hidden;
+      }
+      #background-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+        display: block;
+      }
     }
 
     /* Custom styles for the Share on Twitter button */
@@ -45,7 +63,6 @@
       background-color: dodgerblue;
     }
   </style>
-
 </head>
 
 <body>
@@ -53,6 +70,7 @@
     <source src="images/back.mp4" type="video/mp4">
     <source src="images/back.webm" type="video/webm">
     <!-- Add more source tags for other video formats if desired -->
+    <img src="images/fallback.jpeg" alt="Fallback Image">
   </video>
 
   <header>
@@ -81,14 +99,12 @@
 
           <p id="random-number-text"></p>
           <button id="generate-number-btn" class="btn btn-primary mb-3">Button of Fate</button>
-          <div id="tweetDialog" class="mt-2">
-
-          </div>
-
+          <div id="tweetDialog" class="mt-2"></div>
         </div>
       </div>
     </div>
   </main>
+
   <!-- Add Bootstrap JS and its dependencies -->
   <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
     integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/1z7rJr59U7z8/7+ol7kzgO5k5ulTio2f3ax4Sf" crossorigin="anonymous"></script>
@@ -111,5 +127,6 @@
 </body>
 
 </html>
+
 
 
