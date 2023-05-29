@@ -22,9 +22,9 @@
       position: fixed;
       top: 0;
       left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* Custom styles for the Share on Twitter button */
@@ -49,10 +49,11 @@
 </head>
 
 <body>
-  <video autoplay loop muted id="background-video">
+  <video autoplay loop id="background-video" playsinline>
     <source src="images/back.mp4" type="video/mp4">
     <source src="images/back.webm" type="video/webm">
     <!-- Add more source tags for other video formats if desired -->
+    <img src="images/fallback.jpg" alt="Background Image">
   </video>
 
   <header>
