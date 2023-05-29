@@ -1,11 +1,3 @@
-const playVideoBtn = document.getElementById("play-video-btn");
-const backgroundVideo = document.getElementById("background-video");
-
-playVideoBtn.addEventListener("click", () => {
-  playVideoBtn.style.display = "none"; // Hide the play button
-  backgroundVideo.play(); // Start video playback
-});
-
 const generateNumberBtn = document.getElementById("generate-number-btn");
 const randomNumberContainer = document.getElementById("random-number-container");
 const tweetDialog = document.getElementById("tweetDialog");
